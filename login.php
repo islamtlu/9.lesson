@@ -1,6 +1,7 @@
 <?php
 	require_once("functions.php");
 	
+	//Restriction - Not logged in
 	if(isset($_SESSION["user_id"])){
 		//redirect user to restricted page
 		header("Location: restrict.php");
