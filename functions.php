@@ -6,6 +6,10 @@
 	
 	function signup($user, $pass){
 		
+		//hash the password
+		$pass = hash ("sha512", $pass);
+		
+		
 		
 		//GLOBALS - access outside variable in function, this is to access the configuration file
 		$mysql = new mysqli("localhost", $GLOBALS["db_username"], $GLOBALS["db_password"], "webpr2016_islam");
