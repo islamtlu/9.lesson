@@ -1,5 +1,10 @@
 <?php
 	require_once("functions.php");
+	
+	if(isset($_SESSION["user_id"])){
+		//redirect user to restricted page
+		header("Location: restrict.php");
+	}
 
 	//login=something is in the URL
 	if(isset($_POST["login"])){
@@ -7,6 +12,16 @@
 		//login
 		
 		echo "logging in ...";
+		
+				if (!empty($_POST["username"]) && !empty ($_POST["password"])){
+			
+			//save to DB
+			
+			login($_POST["username"], $_POST["password"]);
+		}else{
+			
+			echo "Both fields are required!";
+		}
 		
 	//signup button clicked
 	}else if(isset($_POST["signup"])){
