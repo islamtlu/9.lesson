@@ -20,6 +20,6 @@
 
 ?>
 
-<h2> Howdy <?=$_SESSION["username"];?> (<?=$_SESSION["user_id"];?>) </h2>
+<h2> Howdy <?=$_SESSION["first_name"];?> <?=$_SESSION["last_name"];?> (<?=$_SESSION["user_id"];?>) </h2>
 
 <a href="?logout=1" >Log Out</a>

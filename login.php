@@ -32,14 +32,14 @@
 		echo "signing up ...";
 		
 		//Check the fields are not empty
-		if (!empty($_POST["username"]) && !empty ($_POST["password"])){
+		if (!empty($_POST["first_name"]) && !empty($_POST["last_name"]) && !empty($_POST["username"]) && !empty ($_POST["password"])){
 			
 			//save to DB
 			
-			signup($_POST["username"], $_POST["password"]);
+			signup($_POST["first_name"], $_POST["last_name"], $_POST["username"], $_POST["password"]);
 		}else{
 			
-			echo "Both fields are required!";
+			echo "All fields are required!";
 		}
 	}
 
@@ -52,6 +52,7 @@
 <h1>Log In</h1>
 <form method="POST">
 
+
 	<input type="text" placeholder="Enter your username" name="username">
 	<input type="password" placeholder="Input your password" name="password">
 	
@@ -63,8 +64,10 @@
 <h1>Sign Up</h1>
 <form method="POST">
 
-	<input type="text" placeholder="Enter your username" name="username">
-	<input type="password" placeholder="Input your password" name="password">
+	<input type="text" placeholder="Enter your first name" name="first_name"><br>
+	<input type="text" placeholder="Enter your last name" name="last_name"><br>
+	<input type="text" placeholder="Enter your chosen username" name="username"><br>
+	<input type="password" placeholder="Input your chosen password" name="password"><br><br>
 	
 	<input type="submit" name="signup" value="Sign Up">
 
